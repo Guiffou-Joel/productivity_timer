@@ -59,6 +59,28 @@ class TimerHomePage extends StatelessWidget {
               Padding(padding: EdgeInsets.all(defaultPadding)),
             ],
           ),
+          Expanded(child: Text("Hello")),
+          Row(
+            children: <Widget>[
+              Padding(padding: EdgeInsets.all(defaultPadding)),
+              Expanded(
+                child: ProductivityButton(
+                  color: Color(0xff212121),
+                  text: "Stop",
+                  onPressed: emptyMethod,
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(defaultPadding)),
+              Expanded(
+                child: ProductivityButton(
+                  color: Color(0xff009688),
+                  text: "Restart",
+                  onPressed: emptyMethod,
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(defaultPadding)),
+            ],
+          ),
         ],
       ),
     );
