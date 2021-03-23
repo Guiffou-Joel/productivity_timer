@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:productivity_timer/widgets.dart';
 
 void main() => runApp(MyApp());
+
+final double defaultPadding = 5.0;
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "My Work Timer",
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
@@ -15,6 +19,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
+void emptyMethod() {}
+
 class TimerHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -22,8 +28,38 @@ class TimerHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('My work timer'),
       ),
-      body: Center(
-        child: Column(),
+      body: Column(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Padding(padding: EdgeInsets.all(defaultPadding)),
+              Expanded(
+                child: ProductivityButton(
+                  color: Color(0xff009688),
+                  text: "Work",
+                  onPressed: emptyMethod,
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(defaultPadding)),
+              Expanded(
+                child: ProductivityButton(
+                  color: Color(0xff607D8B),
+                  text: "Short Break",
+                  onPressed: emptyMethod,
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(defaultPadding)),
+              Expanded(
+                child: ProductivityButton(
+                  color: Color(0xff455A6A),
+                  text: "Long Break",
+                  onPressed: emptyMethod,
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(defaultPadding)),
+            ],
+          ),
+        ],
       ),
     );
   }
